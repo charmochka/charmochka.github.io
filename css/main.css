@@ -1,0 +1,258 @@
+body {
+	font-family: "Raleway", sans-serif;
+	font-weight: normal;
+	font-size: 14px;
+	min-width: 320px;
+	position: relative;
+	line-height: 1.42857;
+	-webkit-font-smoothing: antialised;
+	overflow-x: hidden;
+	background-color: #222;
+	color: aliceblue
+}
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid {
+	color: red;
+}
+
+body input:required:valid,
+body textarea:required:valid {
+	color: green;
+}
+
+.hidden {
+	display: none;
+}
+
+.left-side {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 50px;
+	height: 100%;
+	z-index: 3;
+	overflow-x: hidden;
+	background-color: #1d1d1de8;
+	-webkit-transition: all .5s;
+	transition: all .5s;
+}
+
+.left-side.active {
+	width: 300px;
+}
+
+/*Показать контент внутри */
+
+.left-side.active .user-info {
+	opacity: 1;
+	-webkit-transition: all .8s;
+	transition: all .8s;
+}
+
+/*Button menu*/
+
+.btn_mnu {
+	width: 50px;
+	height: 50px;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	background-color: #ff6347;
+	cursor: pointer;
+	position: relative;
+}
+
+.btn_row {
+	height: 2px;
+	width: 60%;
+	margin: 2px 0;
+	background-color: #fff;
+	position: relative;
+	-webkit-transition: all .5s;
+	transition: all .5s;
+}
+
+.btn_mnu.active .btn_row:first-child {
+	-webkit-transform: rotate(-135deg);
+	transform: rotate(-135deg);
+	top: 6px;
+}
+
+.btn_mnu.active .btn_row:last-child {
+	-webkit-transform: rotate(-225deg);
+	transform: rotate(-225deg);
+	top: -6px;
+}
+
+.btn_mnu.active .btn_row:nth-child(2) {
+	opacity: 0;
+}
+
+.btn_mnu {
+	float: right;
+}
+
+.left-side.active .btn_mnu {
+	background-color: transparent;
+	-webkit-transition: all .3s;
+	transition: all .3s;
+}
+
+/*Informaciya ob avtore*/
+
+.aside-content {
+	position: absolute;
+	top: 50px;
+	width: 100%;
+	padding: 25px 0;
+}
+
+.user-info {
+	text-align: center;
+	opacity: 0;
+	white-space: nowrap;
+	transition: all .5s;
+}
+
+.user-info img {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+}
+
+.user-info h2 {
+	font-size: 16px;
+	color: #fff;
+	margin-top: 15px;
+	margin-bottom: 0;
+}
+
+.user-info p {
+	font-size: 12px;
+	letter-spacing: 1px;
+	color: rgb(87, 87, 87);
+	margin: 15px 0;
+}
+
+/*navigaciya*/
+
+.aside-content nav {
+	margin: 35px 0;
+}
+
+.aside-content ul,
+.aside-content li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.aside-content li a {
+	color: rgba(255, 255, 255, 0.8);
+	text-decoration: none;
+	display: block;
+	padding: 10px 0 10px 100px;
+	border-bottom: 1px solid rgba(87, 87, 87, 0.5);
+	white-space: nowrap;
+}
+
+.aside-content li:first-child {
+	border-top: 1px solid rgba(87, 87, 87, 0.5);
+}
+
+.aside-content li a:hover,
+.aside-content li a:active,
+.aside-content li a:focus {
+	background-color: #ff6347;
+}
+
+/*icons*/
+
+.left-side.active .aside-content li a::before {
+	margin-left: -2px;
+}
+
+.left-side.active .aside-content li:hover a {
+text-indent: 5px;
+}
+
+.aside-content nav {
+	background-color: #1d1d1de8;
+	position: relative;
+	z-index: 5;
+	margin-top: -100px;
+	transition: all .7s;
+}
+
+.left-side.active .aside-content nav {
+margin-top: 35px;
+transition: all .7s;
+}
+
+
+
+.aside-content li a::before {
+	font-family: "linea-basic-10";
+	font-size: 25px;
+	line-height: 0;
+	margin-top: -1px;
+	margin-left: -87px;
+	margin-right: 13px;
+	display: inline-block;
+	vertical-align: middle;
+	-webkit-transition: all .5s;
+	transition: all .5s;
+}
+
+.aside-content li:nth-child(1) a::before {
+	content: "u";
+}
+
+.aside-content li:nth-child(2) a::before {
+	content: "{";
+}
+
+.aside-content li:nth-child(3) a::before {
+	content: "R";
+}
+
+
+
+
+.content {
+	position: relative;
+	margin: 5px 5px 55px 55px;
+	left: 0;
+}
+
+.gallery a {
+	overflow: hidden;
+	display: block;
+	width: 350px;
+	min-height: 50px;
+}
+
+.gallery img {
+	display: block;
+	max-width: 100%;
+	transition: all 30s;
+}
+
+
+.gallery img:hover {
+transform: scale(5)
+}
