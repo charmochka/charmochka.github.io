@@ -30,12 +30,38 @@ $(document).ready(function() {
 	});
 	
 	$(".gallery img").lazyload({
-		effect : "fadeIn"
-	}).hover(function (){
-		$(".gallery img").css("opacity", ".7");
+		effect : "fadeIn",
+		threshold: 1000
+
+	});
+
+	$(".gallery a").hover(function (){
+		$(".gallery a").css("opacity", ".7");
 		$(this).css("opacity", "1");
 	}, function() {
-		$(".gallery img").css("opacity", "1");
+		$(".gallery a").css("opacity", "1");
+	});
+
+	$(".gallery a").magnificPopup({
+		type : 'image',
+		gallery : {
+			enabled : true
+		},
+		removalDelay: 300,
+		mainClass: 'mfp-fade'
+	});
+
+	$(".gallery").css("min-height", $(document).height()*2);
+
+//Фильтрация
+	$(".filter-label").click(function() {
+		$(".filter-label").removeClass("active");
+		var filter = $(this).addClass("active").data("filter");
+		wall.filter(filter);
+		setTimeout(function() {
+			$(window).resize();
+			wall.fitWidth();
+		}, 400);
 	});
 
 

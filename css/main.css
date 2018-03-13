@@ -256,3 +256,72 @@ transition: all .7s;
 .gallery img:hover {
 transform: scale(5)
 }
+
+.filter-items {
+	position: fixed;
+	bottom: 0;
+	color: #fff;
+	right: 0;
+	text-align: right;
+	width: 100%;
+	background-color: #222;
+	margin-top: 5px;
+}
+
+.filter-label {
+	background-color: transparent;
+	color: #fff;
+	transition: all .5s;
+	padding: 5px 15px;
+	opacity: .4;
+	margin: 15px 3px 15px;
+	font-size: 12px;
+	letter-spacing: 3px;
+	border: 1px  #fff solid;
+	cursor: pointer;
+}
+
+.filter-label:hover, 
+.filter-label:active,
+.filter-label:focus {
+	background-color: #ff6347;
+	opacity: 1;
+	border-color: #ff6347;
+}
+
+/*Галерея*/
+
+/* overlay at start */
+.mfp-fade.mfp-bg {
+	opacity: 0;
+
+	-webkit-transition: all 1s ease-out;
+	-moz-transition: all 1s ease-out;
+	transition: all 1s ease-out;
+  }
+  /* overlay animate in */
+  .mfp-fade.mfp-bg.mfp-ready {
+	opacity: 0.8;
+
+  }
+  /* overlay animate out */
+  .mfp-fade.mfp-bg.mfp-removing {
+	opacity: 0;
+  }
+  
+  /* content at start */
+  .mfp-fade.mfp-wrap .mfp-content {
+	opacity: 0;
+ 
+	-webkit-transition: all 0.15s ease-out;
+	-moz-transition: all 0.15s ease-out;
+	transition: all 0.15s ease-out;
+  }
+  /* content animate it */
+  .mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+	opacity: 1;
+  }
+  /* content animate out */
+  .mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+	opacity: 0;
+  }
